@@ -10,7 +10,7 @@
 
   <header>
     <h1>Exam Bro</h1>
-    <button id="theme">Dark Mode</button>
+    <button id="themeBtn">Dark Mode</button>
   </header>
 
   <main>
@@ -18,7 +18,7 @@
       <h2>Settings</h2>
       <label for="apiKey">Gemini API Key</label>
       <input type="password" id="apiKey" placeholder="Paste your API key here">
-      <button id="saveKey">Save Key</button>
+      <button id="saveKeyBtn">Save Key</button>
       <p>Your key is stored only in your browser.</p>
     </section>
 
@@ -42,7 +42,52 @@
         <p id="loading" class="hidden">Generating your study material...</p>
         <p id="error" class="hidden"></p>
     </section>
+
+      <section id="results">
+      <h2>Results</h2>
+
+      <button id="summaryTab">Summary</button>
+      <button id="quizTab">Quiz</button>
+      <button id="flashTab">Flashcards</button>
+
+      <div id="summaryBox">
+        <h3>Summary</h3>
+        <p id="summaryText"></p>
+        <button id="copyBtn">Copy</button>
+        <button id="downloadBtn">Download</button>
+        <button id="speakBtn">Read Aloud</button>
+        <button id="stopBtn">Stop</button>
+      </div>
+
+      <div id="quizBox" class="hidden">
+        <h3>Quiz</h3>
+        <div id="quizArea"></div>
+        <p id="score">Score: 0 / 5</p>
+        <button id="nextBtn">Next Question</button>
+      </div>
+
+      <div id="flashBox" class="hidden">
+        <h3>Flashcards</h3>
+        <div id="card"></div>
+        <p>Click the card to flip it</p>
+        <button id="prevCardBtn">Previous</button>
+        <button id="nextCardBtn">Next</button>
+        <button id="knownBtn">Known</button>
+        <button id="unknownBtn">Not Known</button>
+        <p id="knownCount">Known: 0 / 0</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>History</h2>
+      <ul id="historyList"></ul>
+      <button id="clearBtn">Clear History</button>
+    </section>
   </main>
+
+  <footer>
+    <p>Built for Web Technology CA, Assignment 5</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>

@@ -1,0 +1,303 @@
+/* basic page setup*/
+:root {
+  --primary: #3b5bdb;
+  --primary-dark: #2f4ac0;
+  --bg: #f4f6f8;
+  --card-bg: #ffffff;
+  --text: #222222;
+  --border: #dddddd;
+  --muted: #666666;
+  --option-bg: #e7ecff;
+  --option-hover: #d0d9ff;
+  --flash-bg: #fff3bf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/*header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary);
+  color: white;
+  padding: 15px 25px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/*layout and sections */
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+section {
+  background-color: var(--card-bg);
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.3s;
+}
+
+h2 {
+  margin-top: 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--primary);
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/*form elements */
+label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 91, 219, 0.2);
+}
+
+/*buttons*/
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background-color: var(--primary-dark);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+header button {
+  background-color: white;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+header button:hover {
+  background-color: #e0e0e0;
+}
+
+/* hidden, loading and error */
+.hidden {
+  display: none;
+}
+
+#loading {
+  text-align: center;
+  font-weight: bold;
+  color: var(--primary);
+  margin: 0;
+}
+
+#error {
+  background-color: #ffe3e3;
+  color: #c92a2a;
+  border: 1px solid #c92a2a;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+/* tabs, results, quiz and flashcards */
+.tabs {
+  display: flex;
+  gap: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+.tab {
+  background-color: transparent;
+  color: var(--muted);
+  border-radius: 5px 5px 0 0;
+  margin-bottom: -2px;
+  border-bottom: 3px solid transparent;
+}
+
+.tab:hover {
+  background-color: var(--option-bg);
+  color: var(--text);
+}
+
+.tab.active {
+  color: var(--primary);
+  font-weight: bold;
+  border-bottom-color: var(--primary);
+}
+
+#summaryBox, #quizBox, #flashBox {
+  margin-top: 15px;
+  padding: 15px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+#quizArea button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin-top: 8px;
+  background-color: var(--option-bg);
+  color: var(--text);
+}
+
+#quizArea button:hover:not(:disabled) {
+  background-color: var(--option-hover);
+}
+
+#quizArea button.correct {
+  background-color: #2b8a3e;
+  color: white;
+}
+
+#quizArea button.wrong {
+  background-color: #c92a2a;
+  color: white;
+}
+
+#score, #knownCount {
+  font-weight: bold;
+}
+
+#card {
+  background-color: var(--flash-bg);
+  color: #222;
+  border: 2px solid #f59f00;
+  border-radius: 10px;
+  padding: 40px 20px;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  transition: transform 0.15s;
+}
+
+#card:hover {
+  transform: translateY(-3px);
+}
+
+/* history */
+#historyList {
+  padding-left: 20px;
+}
+
+#historyList li {
+  cursor: pointer;
+  margin-bottom: 6px;
+  color: var(--primary);
+}
+
+#historyList li:hover {
+  text-decoration: underline;
+}
+
+/* footer */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  color: #555;
+}
+
+/* dark mode and responsive */
+body.dark {
+  --bg: #1a1b1e;
+  --card-bg: #25262b;
+  --text: #eeeeee;
+  --border: #444444;
+  --muted: #aaaaaa;
+  --option-bg: #34363c;
+  --option-hover: #44474f;
+  --primary: #5c7cfa;
+  --primary-dark: #4263eb;
+}
+
+body.dark input, body.dark textarea, body.dark select {
+  background-color: #2c2e33;
+  color: #eee;
+  border-color: #555;
+}
+
+body.dark footer {
+  color: #aaa;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  .btn-row button {
+    flex: 1 1 100%;
+  }
+
+  .tab {
+    flex: 1;
+    padding: 10px 6px;
+  }
+}

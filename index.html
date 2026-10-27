@@ -9,7 +9,7 @@
 <body>
 
   <header>
-    <h1>Exam Bro</h1>
+    <h1>📚 Exam Bro</h1>
     <button id="themeBtn">Dark Mode</button>
   </header>
 
@@ -18,15 +18,17 @@
       <h2>Settings</h2>
       <label for="apiKey">Gemini API Key</label>
       <input type="password" id="apiKey" placeholder="Paste your API key here">
-      <button id="saveKeyBtn">Save Key</button>
-      <p>Your key is stored only in your browser.</p>
+      <div class="btn-row">
+        <button id="saveKeyBtn">Save Key</button>
+      </div>
+      <p class="hint">Your key is stored only in your browser.</p>
     </section>
 
     <section>
       <h2>Your Notes</h2>
       <label for="notes">Paste your notes or type a topic</label>
       <textarea id="notes" rows="10" placeholder="Paste your class notes here..."></textarea>
-      <p><span id="charCount">0</span> characters</p>
+      <p class="hint"><span id="charCount">0</span> characters</p>
 
       <label for="style">Answer Style</label>
       <select id="style">
@@ -35,45 +37,55 @@
         <option value="detailed">Detailed</option>
       </select>
 
-      <button id="generateBtn">Generate Study Material</button>
+      <div class="btn-row">
+        <button id="generateBtn">Generate Study Material</button>
+      </div>
     </section>
 
     <section>
-        <p id="loading" class="hidden">Generating your study material...</p>
-        <p id="error" class="hidden"></p>
+      <p id="loading" class="hidden">Generating your study material...</p>
+      <p id="error" class="hidden"></p>
     </section>
 
-      <section id="results">
+    <section id="results">
       <h2>Results</h2>
 
-      <button id="summaryTab">Summary</button>
-      <button id="quizTab">Quiz</button>
-      <button id="flashTab">Flashcards</button>
+      <div class="tabs">
+        <button id="summaryTab" class="tab active">Summary</button>
+        <button id="quizTab" class="tab">Quiz</button>
+        <button id="flashTab" class="tab">Flashcards</button>
+      </div>
 
       <div id="summaryBox">
         <h3>Summary</h3>
         <p id="summaryText"></p>
-        <button id="copyBtn">Copy</button>
-        <button id="downloadBtn">Download</button>
-        <button id="speakBtn">Read Aloud</button>
-        <button id="stopBtn">Stop</button>
+        <div class="btn-row">
+          <button id="copyBtn">Copy</button>
+          <button id="downloadBtn">Download</button>
+          <button id="speakBtn">Read Aloud</button>
+          <button id="stopBtn">Stop</button>
+        </div>
       </div>
 
       <div id="quizBox" class="hidden">
         <h3>Quiz</h3>
         <div id="quizArea"></div>
         <p id="score">Score: 0 / 5</p>
-        <button id="nextBtn">Next Question</button>
+        <div class="btn-row">
+          <button id="nextBtn">Next Question</button>
+        </div>
       </div>
 
       <div id="flashBox" class="hidden">
         <h3>Flashcards</h3>
         <div id="card"></div>
-        <p>Click the card to flip it</p>
-        <button id="prevCardBtn">Previous</button>
-        <button id="nextCardBtn">Next</button>
-        <button id="knownBtn">Known</button>
-        <button id="unknownBtn">Not Known</button>
+        <p class="hint">Click the card to flip it</p>
+        <div class="btn-row">
+          <button id="prevCardBtn">Previous</button>
+          <button id="nextCardBtn">Next</button>
+          <button id="knownBtn">Known</button>
+          <button id="unknownBtn">Not Known</button>
+        </div>
         <p id="knownCount">Known: 0 / 0</p>
       </div>
     </section>
@@ -81,7 +93,9 @@
     <section>
       <h2>History</h2>
       <ul id="historyList"></ul>
-      <button id="clearBtn">Clear History</button>
+      <div class="btn-row">
+        <button id="clearBtn">Clear History</button>
+      </div>
     </section>
   </main>
 

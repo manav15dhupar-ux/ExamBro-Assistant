@@ -4,7 +4,7 @@ Exam Bro is an AI-powered study helper. Paste your class notes (or type a topic)
 
 Built for Web Technology CA, Assignment 5.
 
-**Live demo:** `<>`
+**Live demo:** `<https://manav15dhupar-ux.github.io/ExamBro-Assistant/>`
 
 ## Features
 
@@ -78,4 +78,4 @@ The API key is entered by the user and stored only in their own browser (`localS
 
 ## Author
 
-`<MANAV DHUPAR`
+`<MANAV DHUPAR>`
